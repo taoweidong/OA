@@ -19,7 +19,7 @@
 		<!-- 指定hibernate的配置文件位置 -->
 		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="entityInterceptor" ref="MyentityInterceptor"></property>
+		<!-- <property name="entityInterceptor" ref="MyentityInterceptor"></property> -->
 
 	</bean>
 
@@ -62,7 +62,7 @@
 
 
 	<!-- Hibernate自定义拦截器 -->
-	<bean id="MyentityInterceptor" class="cn.itcast.oa.util.MyentityInterceptor"></bean>
+	<!-- <bean id="MyentityInterceptor" class="cn.itcast.oa.util.MyentityInterceptor"></bean> -->
 
 	<!-- 配置声明式事务管理（采用注解的方式） -->
 	<bean id="txManager"
