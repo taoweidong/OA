@@ -65,8 +65,9 @@
 								<img border="0"
 									src="${pageContext.request.contextPath}/style/images/reply.gif" />
 							回复
-						</s:a> <a href="moveUI.html"><img border="0"
-								src="${pageContext.request.contextPath}/style/images/edit.gif" />移动到其他版块</a>
+						</s:a> <s:a action="topic_moveTopicToForumUI?id=%{#topic.id}">
+								<img border="0"
+									src="${pageContext.request.contextPath}/style/images/edit.gif" />移动到其他版块</s:a>
 							<a href="#" onClick="return confirm('要把本主题设为精华吗？')"><img
 								border="0"
 								src="${pageContext.request.contextPath}/style/images/topicType_1.gif" />精华</a>

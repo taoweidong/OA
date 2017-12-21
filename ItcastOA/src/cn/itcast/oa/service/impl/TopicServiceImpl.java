@@ -28,6 +28,19 @@ public class TopicServiceImpl extends DaoSupportImpl<Topic> implements TopicServ
 	}
 
 	@Override
+	public void update(Topic topic) {
+
+		getSession().update(topic);
+
+		// 2. 维护相关的特殊属性
+		Forum forum = topic.getForum();
+		forum.setLastTopic(topic);// 最后主题
+		forum.setArticleCount(forum.getArticleCount() + 1);// 文章数量
+		forum.setTopicCount(forum.getTopicCount() + 1);// 主题数量
+		getSession().update(forum);
+	}
+
+	@Override
 	public void save(Topic topic) {
 
 		// 1. 设置属性并保存

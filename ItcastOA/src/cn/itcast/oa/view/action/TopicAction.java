@@ -1,6 +1,7 @@
 package cn.itcast.oa.view.action;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
@@ -104,6 +105,60 @@ public class TopicAction extends BaseAction<Topic> {
 		topicService.save(model);
 
 		return "toShow";
+	}
+
+	/**
+	 * 主题移动页面
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String moveTopicToForumUI() throws Exception {
+		// 准备数据
+		Topic topic = topicService.getById(model.getId());
+		ActionContext.getContext().put("topic", topic);
+
+		// Forum forum = forumManageService.getById(forumId);
+		// ActionContext.getContext().put("forum", forum);
+
+		List<Forum> forumList = forumManageService.findAll();
+		ActionContext.getContext().put("forumList", forumList);
+
+		return "moveTopicToForumUI";
+
+	}
+
+	/**
+	 * 修改主题板块
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String moveTopicToForum() throws Exception {
+
+		System.out.println("移动至=====》" + destForumId);
+
+		Forum forum = forumManageService.getById(destForumId);
+
+		System.out.println("当前主题ID------>" + model.getId());
+		Topic topic = topicService.getById(model.getId());
+
+		topic.setForum(forum);
+
+		topicService.update(topic);
+
+		return "moveTopicToForum";
+
+	}
+
+	private Long destForumId;
+
+	public Long getDestForumId() {
+		return destForumId;
+	}
+
+	public void setDestForumId(Long destForumId) {
+		this.destForumId = destForumId;
 	}
 
 }
