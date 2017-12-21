@@ -21,7 +21,8 @@ public class SpringTest {
 
 	/**
 	 * 
-	 * Taowd TODO 测试SessionFactory 2017-11-13-下午7:18:05
+	 * Taowd TODO <br>
+	 * 测试SessionFactory 2017-11-13-下午7:18:05
 	 */
 	@Test
 	public void testSessionFactory() throws Exception {
