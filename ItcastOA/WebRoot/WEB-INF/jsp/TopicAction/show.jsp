@@ -68,15 +68,18 @@
 						</s:a> <s:a action="topic_moveTopicToForumUI?id=%{#topic.id}">
 								<img border="0"
 									src="${pageContext.request.contextPath}/style/images/edit.gif" />移动到其他版块</s:a>
-							<a href="#" onClick="return confirm('要把本主题设为精华吗？')"><img
-								border="0"
-								src="${pageContext.request.contextPath}/style/images/topicType_1.gif" />精华</a>
-							<a href="#" onClick="return confirm('要把本主题设为置顶吗？')"><img
-								border="0"
-								src="${pageContext.request.contextPath}/style/images/topicType_2.gif" />置顶</a>
-							<a href="#" onClick="return confirm('要把本主题设为普通吗？')"><img
-								border="0"
-								src="${pageContext.request.contextPath}/style/images/topicType_0.gif" />普通</a>
+							<s:a action="topic_setBest?id=%{#topic.id}&forumId=%{#topic.forum.id}"
+								onClick="return confirm('要把本主题设为精华吗？')">
+								<img border="0"
+									src="${pageContext.request.contextPath}/style/images/topicType_1.gif" />精华</s:a>
+							<s:a action="topic_setTop?id=%{#topic.id}&forumId=%{#topic.forum.id}"
+								onClick="return confirm('要把本主题设为置顶吗？')">
+								<img border="0"
+									src="${pageContext.request.contextPath}/style/images/topicType_2.gif" />置顶</s:a>
+							<s:a action="topic_setNormal?id=%{#topic.id}&forumId=%{#topic.forum.id}"
+								onClick="return confirm('要把本主题设为普通吗？')">
+								<img border="0"
+									src="${pageContext.request.contextPath}/style/images/topicType_0.gif" />普通</s:a>
 						</td>
 						<td width="3" class="ForumPageTableTitleRight">&nbsp;</td>
 					</tr>

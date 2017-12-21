@@ -96,6 +96,9 @@
 			<result name="toShow" type="redirectAction">
 				topic_show?id=${id}
 			</result>
+			<result name="toForum" type="redirectAction">
+				forum_show?id=${forumId}
+			</result>
 		</action>
 
 		<!--论坛：回复相关功能 -->

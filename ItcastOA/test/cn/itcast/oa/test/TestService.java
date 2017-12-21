@@ -22,7 +22,7 @@ public class TestService {
 		for (int i = 0; i <= 30; i++) {
 
 			User user = new User();
-			user.setName("test_" + "(_A_" + i + ")");
+			user.setName("test_" + i);
 			session.save(user);
 		}
 

@@ -151,6 +151,58 @@ public class TopicAction extends BaseAction<Topic> {
 
 	}
 
+	/**
+	 * 设置精华帖
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String setBest() throws Exception {
+
+		Topic topic = topicService.getById(model.getId());
+
+		topic.setType(Topic.TYPE_BEST);
+
+		topicService.update(topic);
+
+		ActionContext.getContext().put("forumId", forumId);
+
+		return "toForum";
+	}
+
+	/**
+	 * 设置置顶帖
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String setTop() throws Exception {
+
+		Topic topic = topicService.getById(model.getId());
+
+		topic.setType(Topic.TYPE_TOP);
+
+		topicService.update(topic);
+		ActionContext.getContext().put("forumId", forumId);
+		return "toForum";
+	}
+
+	/**
+	 * 设置普通帖
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String setNormal() throws Exception {
+
+		Topic topic = topicService.getById(model.getId());
+		topic.setType(Topic.TYPE_NORMAL);
+		topicService.update(topic);
+
+		ActionContext.getContext().put("forumId", forumId);
+		return "toForum";
+	}
+
 	private Long destForumId;
 
 	public Long getDestForumId() {
