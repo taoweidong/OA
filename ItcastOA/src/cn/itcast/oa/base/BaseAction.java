@@ -61,8 +61,6 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	protected int pageNum = 1;
 	protected int pageSize = 10;
 
-	// =========Service实例的声明===============
-
 	public int getPageNum() {
 		return pageNum;
 	}
@@ -78,6 +76,8 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
+
+	// =========Service实例的声明===============
 
 	@Resource
 	protected DepartmentService departmentService;
