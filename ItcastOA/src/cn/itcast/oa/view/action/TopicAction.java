@@ -108,6 +108,62 @@ public class TopicAction extends BaseAction<Topic> {
 	}
 
 	/**
+	 * 修改页面
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String saveUI() throws Exception {
+		// 准备数据
+		Forum forum = forumManageService.getById(forumId);
+		ActionContext.getContext().put("forum", forum);
+
+		// 准备数据显示 Topic
+		Topic topic = topicService.getById(model.getId());
+		ActionContext.getContext().put("topic", topic);
+
+		return "SaveUI";
+	}
+
+	/**
+	 * 更新主题
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String save() throws Exception {
+		Topic topic = topicService.getById(model.getId());
+		// 封装对象保存数据
+		// -->表单参数 已经封装
+		topic.setTitle(model.getTitle());
+		topic.setContent(model.getContent());
+		// --->当前直接获取
+
+		topic.setAuthor(getCurrentUser());// 当前登录用户
+		topic.setIpAddr(ServletActionContext.getRequest().getRemoteAddr());// 当前请求IP地址
+		topic.setPostTime(new Date());// 当前请求时间
+
+		topicService.update(topic);
+
+		return "toShow";
+	}
+
+	/**
+	 * 删除主题--主题不允许删除
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	@Deprecated
+	public String delete() throws Exception {
+
+		topicService.delete(model.getId());
+
+		return "toForum";
+
+	}
+
+	/**
 	 * 主题移动页面
 	 * 
 	 * @return

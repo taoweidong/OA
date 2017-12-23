@@ -68,15 +68,18 @@
 						</s:a> <s:a action="topic_moveTopicToForumUI?id=%{#topic.id}">
 								<img border="0"
 									src="${pageContext.request.contextPath}/style/images/edit.gif" />移动到其他版块</s:a>
-							<s:a action="topic_setBest?id=%{#topic.id}&forumId=%{#topic.forum.id}"
+							<s:a
+								action="topic_setBest?id=%{#topic.id}&forumId=%{#topic.forum.id}"
 								onClick="return confirm('要把本主题设为精华吗？')">
 								<img border="0"
 									src="${pageContext.request.contextPath}/style/images/topicType_1.gif" />精华</s:a>
-							<s:a action="topic_setTop?id=%{#topic.id}&forumId=%{#topic.forum.id}"
+							<s:a
+								action="topic_setTop?id=%{#topic.id}&forumId=%{#topic.forum.id}"
 								onClick="return confirm('要把本主题设为置顶吗？')">
 								<img border="0"
 									src="${pageContext.request.contextPath}/style/images/topicType_2.gif" />置顶</s:a>
-							<s:a action="topic_setNormal?id=%{#topic.id}&forumId=%{#topic.forum.id}"
+							<s:a
+								action="topic_setNormal?id=%{#topic.id}&forumId=%{#topic.forum.id}"
 								onClick="return confirm('要把本主题设为普通吗？')">
 								<img border="0"
 									src="${pageContext.request.contextPath}/style/images/topicType_0.gif" />普通</s:a>
@@ -106,13 +109,15 @@
 								<td align="center">
 									<ul class="TopicFunc">
 										<!--操作列表-->
-										<li class="TopicFuncLi"><a class="detail"
-											href="${pageContext.request.contextPath}/BBS_Topic/saveUI.html"><img
-												border="0"
-												src="${pageContext.request.contextPath}/style/images/edit.gif" />编辑</a>
-											<a class="detail" href="#"
-											onClick="return confirm('确定要删除本帖吗？')"><img border="0"
-												src="${pageContext.request.contextPath}/style/images/delete.gif" />删除</a>
+										<li class="TopicFuncLi"><s:a class="detail"
+												action="topic_saveUI?id=%{#topic.id}&forumId=%{#topic.forum.id}">
+												<img border="0"
+													src="${pageContext.request.contextPath}/style/images/edit.gif" />编辑</s:a>
+											<!-- 主题不允许删除 --> <%-- 	<s:a class="detail"
+												action="topic_delete?id=%{#topic.id}&forumId=%{#topic.forum.id}"
+												onClick="return confirm('确定要删除本帖吗？')">
+												<img border="0"
+													src="${pageContext.request.contextPath}/style/images/delete.gif" />删除</s:a> --%>
 										</li>
 										<!-- 文章的标题 -->
 										<li class="TopicSubject">${topic.title}</li>

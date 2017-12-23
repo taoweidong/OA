@@ -89,6 +89,7 @@
 		<action name="topic_*" class="topicAction" method="{1}">
 			<result name="show">/WEB-INF/jsp/TopicAction/show.jsp</result>
 			<result name="addUI">/WEB-INF/jsp/TopicAction/addUI.jsp</result>
+			<result name="SaveUI">/WEB-INF/jsp/TopicAction/SaveUI.jsp</result>
 			<result name="moveTopicToForum" type="redirectAction">forum_show?id=${destForumId}
 			</result>
 			<result name="moveTopicToForumUI">/WEB-INF/jsp/TopicAction/moveTopicToForumUI.jsp

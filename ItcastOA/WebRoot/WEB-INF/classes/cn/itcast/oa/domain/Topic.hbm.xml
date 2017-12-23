@@ -10,7 +10,7 @@
 			<generator class="native" />
 		</id>
 		<property name="title" type="text" length="65536" />
-		<property name="content" type="text" length="65536"/>
+		<property name="content" type="text" length="65536" />
 		<property name="postTime" type="timestamp" />
 		<property name="ipAddr" />
 
