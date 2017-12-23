@@ -17,7 +17,7 @@
 		<interceptors>
 			<!-- 声明拦截器 -->
 			<interceptor name="CheckPrivilegeInterceptor"
-				class="cn.itcast.oa.util.CheckPrivilegeInterceptor"></interceptor>
+				class="cn.taowd.oa.util.CheckPrivilegeInterceptor"></interceptor>
 			<interceptor-stack name="defaultStack">
 				<!-- 先调用检查是否拥有权限的拦截器 -->
 				<interceptor-ref name="CheckPrivilegeInterceptor"></interceptor-ref>

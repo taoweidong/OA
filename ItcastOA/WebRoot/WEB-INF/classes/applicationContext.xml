@@ -8,7 +8,7 @@
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
 	<!-- 自动扫描与装配bean -->
-	<context:component-scan base-package="cn.itcast.oa"></context:component-scan>
+	<context:component-scan base-package="cn.taowd.oa"></context:component-scan>
 
 	<!-- 导入外部的数据库配置properties文件 -->
 	<context:property-placeholder location="classpath:jdbc.properties" />

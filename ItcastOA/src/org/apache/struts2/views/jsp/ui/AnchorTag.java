@@ -30,7 +30,7 @@ import org.apache.struts2.components.Component;
 
 import com.opensymphony.xwork2.util.ValueStack;
 
-import cn.itcast.oa.domain.User;
+import cn.taowd.oa.domain.User;
 
 /**
  * @see Anchor

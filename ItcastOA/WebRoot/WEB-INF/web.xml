@@ -17,7 +17,7 @@
 	<!-- 自定义的初始化监听器，用于加载程序中的原始数据(每次启动时加载一次) -->
 	<!-- 用于做初始化工作的监听器，一定要配置到Spring的ContextLoaderListener之后，因为要用到Spring的容器对象 -->
 	<listener>
-		<listener-class>cn.itcast.oa.util.InitListener</listener-class>
+		<listener-class>cn.taowd.oa.util.InitListener</listener-class>
 	</listener>
 
 	<!-- 配置Spring的用于解决Hibernate懒加载问题的过滤器 -->
